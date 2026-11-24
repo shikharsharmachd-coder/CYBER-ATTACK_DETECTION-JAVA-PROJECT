@@ -5,17 +5,22 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    // MySQL connection details
     private static final String URL =
             "jdbc:mysql://localhost:3306/cyberguard_db";
 
-    private static final String USER = "root";
+    private static final String USER =
+            System.getenv("DB_USER");
 
-    // Replace this with your actual MySQL password
-    private static final String PASSWORD = "Shikharr@003";
+    private static final String PASSWORD =
+            System.getenv("DB_PASSWORD");
 
-    // Establish database connection
     public static Connection getConnection() {
+
+        if (USER == null || PASSWORD == null) {
+            System.out.println("Database credentials are missing!");
+            System.out.println("Please configure DB_USER and DB_PASSWORD.");
+            return null;
+        }
 
         try {
             Connection connection = DriverManager.getConnection(
@@ -23,14 +28,11 @@ public class DatabaseConnection {
             );
 
             System.out.println("MySQL Connected Successfully!");
-
             return connection;
 
         } catch (SQLException e) {
-
             System.out.println("Database Connection Failed!");
             System.out.println(e.getMessage());
-
             return null;
         }
     }
