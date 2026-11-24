@@ -121,6 +121,78 @@ public class LogDAO {
         return json.append("]").toString();
     }
 
+    // Return a filtered, paginated set of security logs for the log browser.
+    public static String getLogsPage(int days, int page, int pageSize)
+            throws SQLException {
+
+        String filter = days > 0
+                ? " WHERE created_at >= DATE_SUB(CURRENT_TIMESTAMP, INTERVAL ? DAY)"
+                : "";
+        String countSql = "SELECT COUNT(*) FROM security_logs" + filter;
+        String rowsSql = """
+            SELECT log_id, ip_address, event_type,
+                   description, severity, detection_result, created_at
+            FROM security_logs
+            """ + filter + " ORDER BY created_at DESC, log_id DESC LIMIT ? OFFSET ?";
+
+        long total = 0;
+        StringBuilder json = new StringBuilder("{\"logs\":[");
+        boolean first = true;
+        int offset = (page - 1) * pageSize;
+
+        try (Connection connection = DatabaseConnection.getConnection()) {
+
+            if (connection == null) {
+                throw new SQLException("Database connection unavailable.");
+            }
+
+            try (PreparedStatement countStatement = connection.prepareStatement(countSql)) {
+
+                if (days > 0) countStatement.setInt(1, days);
+
+                try (ResultSet rs = countStatement.executeQuery()) {
+                    if (rs.next()) total = rs.getLong(1);
+                }
+            }
+
+            try (PreparedStatement statement = connection.prepareStatement(rowsSql)) {
+
+                int parameter = 1;
+                if (days > 0) statement.setInt(parameter++, days);
+                statement.setInt(parameter++, pageSize);
+                statement.setInt(parameter, offset);
+
+                try (ResultSet rs = statement.executeQuery()) {
+
+                    while (rs.next()) {
+
+                        if (!first) json.append(",");
+                        first = false;
+
+                        json.append("{")
+                            .append("\"log_id\":").append(rs.getInt("log_id")).append(",")
+                            .append("\"ip_address\":").append(quote(rs.getString("ip_address"))).append(",")
+                            .append("\"event_type\":").append(quote(rs.getString("event_type"))).append(",")
+                            .append("\"description\":").append(quote(rs.getString("description"))).append(",")
+                            .append("\"severity\":").append(quote(rs.getString("severity"))).append(",")
+                            .append("\"detection_result\":").append(quote(rs.getString("detection_result"))).append(",")
+                            .append("\"created_at\":").append(quote(rs.getString("created_at")))
+                            .append("}");
+                    }
+                }
+            }
+        }
+
+        return json.append("],\"total\":")
+                .append(total)
+                .append(",\"page\":")
+                .append(page)
+                .append(",\"pageSize\":")
+                .append(pageSize)
+                .append("}")
+                .toString();
+    }
+
     // Retrieve the latest 100 security alerts
     public static String getRecentAlerts() throws SQLException {
 

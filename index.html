@@ -6,13 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberGuard | Security Monitoring System</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+    <div id="authScreen">
+        <form class="auth-card" id="loginForm">
+            <div class="auth-brand">
+                <div class="auth-logo">C</div>
+                <div><h2>CyberGuard</h2><p>SECURITY CENTER</p></div>
+            </div>
+            <h1>Sign in</h1>
+            <p class="auth-subtitle">Use your administrator account to open the dashboard.</p>
+            <div class="auth-field">
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername" autocomplete="username" required placeholder="Your username">
+            </div>
+            <div class="auth-field">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" autocomplete="current-password" required placeholder="Your password">
+            </div>
+            <button type="submit" id="loginButton">Sign In</button>
+            <div id="loginMessage" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+
+
     <div class="app">
 
-        <!-- SIDEBAR -->
         <aside class="sidebar">
 
             <div class="brand">
@@ -68,16 +90,15 @@
                         <strong>Administrator</strong>
                         <small>Security Analyst</small>
                     </div>
+                    <button type="button" id="logoutButton">Logout</button>
                 </div>
 
             </div>
         </aside>
 
 
-        <!-- MAIN AREA -->
         <main class="main-content">
 
-            <!-- DASHBOARD -->
             <section class="page" id="dashboard">
 
                 <header class="topbar">
@@ -89,7 +110,7 @@
                     <div class="topbar-right">
                         <span class="live-status">
                             <span class="online-dot"></span>
-                            LIVE DATABASE
+                            Live database
                         </span>
                         <span class="date" id="currentDate"></span>
                     </div>
@@ -97,14 +118,12 @@
 
                 <div class="welcome">
                     <div>
-                        <h2>Welcome back, Administrator</h2>
-                        <p>Here's an overview of your security environment.</p>
+                        <h2>Welcome back</h2>
+                        <p>Here's a summary of activity across your network.</p>
                     </div>
-                    <span class="demo-label">DATABASE CONNECTED</span>
                 </div>
 
 
-                <!-- STATISTICS -->
                 <div class="stats-grid">
 
                     <div class="stat-card">
@@ -113,7 +132,7 @@
                             <span class="stat-icon blue">▤</span>
                         </div>
                         <h2 id="totalEvents">--</h2>
-                        <p>Recorded security events</p>
+                        <p>Events logged</p>
                     </div>
 
                     <div class="stat-card">
@@ -122,7 +141,7 @@
                             <span class="stat-icon red">⚠</span>
                         </div>
                         <h2 id="threatsDetected">--</h2>
-                        <p>Suspicious activities</p>
+                        <p>Flagged as suspicious</p>
                     </div>
 
                     <div class="stat-card">
@@ -131,7 +150,7 @@
                             <span class="stat-icon orange">⊘</span>
                         </div>
                         <h2 id="flaggedIPs">--</h2>
-                        <p>IPs flagged by detection rules</p>
+                        <p>IP addresses flagged</p>
                     </div>
 
                     <div class="stat-card">
@@ -140,13 +159,12 @@
                             <span class="stat-icon green">✓</span>
                         </div>
                         <h2 id="resolvedIncidents">--</h2>
-                        <p>Marked as resolved</p>
+                        <p>Incidents closed</p>
                     </div>
 
                 </div>
 
 
-                <!-- CHARTS -->
                 <div class="dashboard-grid">
 
 
@@ -155,9 +173,8 @@
                         <div class="panel-heading">
                             <div>
                                 <h3>Security Activity</h3>
-                                <p>Actual network events recorded in MySQL — last 7 days</p>
+                                <p>Events per day over the past week</p>
                             </div>
-                            <span class="tag">LIVE DATA</span>
                         </div>
 
                         <div class="chart">
@@ -179,7 +196,7 @@
                                 </div>
 
                                 <div class="bar-container" id="activityChart">
-                                    <p>Loading activity data...</p>
+                                    <p>Loading activity…</p>
                                 </div>
                             </div>
                         </div>
@@ -196,13 +213,12 @@
                         <div class="panel-heading">
                             <div>
                                 <h3>Threat Overview</h3>
-                                <p>Distribution of suspicious activities from MySQL</p>
+                                <p>What kinds of suspicious activity we are seeing</p>
                             </div>
-                            <span class="tag">LIVE DATA</span>
                         </div>
 
                         <div id="threatOverview">
-                            <p>Loading threat statistics...</p>
+                            <p>Loading threat counts…</p>
                         </div>
 
                     </div>
@@ -212,13 +228,12 @@
 
 
 
-                <!-- RECENT EVENTS -->
                 <div class="panel events-panel">
 
                     <div class="panel-heading">
                         <div>
-                            <h3>Recent Security Events</h3>
-                            <p>Latest recorded activity from MySQL</p>
+                            <h3>Recent events</h3>
+                            <p>The most recent things logged on your network</p>
                         </div>
 
                         <a href="#logs" class="view-link">View All →</a>
@@ -228,18 +243,18 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>IP ADDRESS</th>
-                                    <th>EVENT TYPE</th>
-                                    <th>DESCRIPTION</th>
-                                    <th>SEVERITY</th>
-                                    <th>STATUS</th>
+                                    <th>IP address</th>
+                                    <th>Event type</th>
+                                    <th>Description</th>
+                                    <th>Severity</th>
+                                    <th>Status</th>
 
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td colspan="5">Loading security events...</td>
+                                    <td colspan="5">Loading events…</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -248,13 +263,12 @@
                 </div>
 
                 <footer>
-                    CyberGuard Security Center | Educational Monitoring Simulator
+                    CyberGuard Security Center, an educational monitoring simulator
                 </footer>
 
             </section>
 
 
-            <!-- SECURITY LOGS -->
             <section class="page" id="logs">
 
                 <header class="topbar">
@@ -262,24 +276,21 @@
                         <p class="breadcrumb">Security Center / Security Logs</p>
                         <h1>Security Logs</h1>
                     </div>
-                    <span class="demo-label">LIVE DATABASE</span>
                 </header>
 
                 <div class="page-intro">
-                    <h2>Network Activity Records</h2>
-                    <p>Review recorded login attempts and network activity.</p>
+                    <h2>All network events</h2>
+                    <p>See every login attempt and network event that has been logged.</p>
                 </div>
 
 
-                <!-- MANUAL NETWORK ACTIVITY ENTRY -->
                 <div class="panel entry-panel">
 
                     <div class="panel-heading">
                         <div>
-                            <h3>Submit Network Activity</h3>
-                            <p>Manually submit a network event for security analysis.</p>
+                            <h3>Add an event</h3>
+                            <p>Log a network event by hand and it will be checked against the detection rules.</p>
                         </div>
-                        <span class="demo-label">MANUAL ENTRY</span>
                     </div>
 
                     <form id="logForm">
@@ -325,7 +336,7 @@
 
                         <div class="form-actions">
                             <button type="submit" class="submit-btn" id="submitLogBtn">
-                                Submit Activity
+                                Log event
                             </button>
                         </div>
 
@@ -336,30 +347,28 @@
                 </div>
 
 
-                <!-- CSV NETWORK LOG IMPORT -->
                 <div class="panel csv-panel">
 
                     <div class="panel-heading">
                         <div>
-                            <h3>Import Network Logs</h3>
-                            <p>Upload a CSV file containing multiple network activity records.</p>
+                            <h3>Import from CSV</h3>
+                            <p>Add many events at once from a spreadsheet file.</p>
                         </div>
-                        <span class="demo-label">BULK IMPORT</span>
                     </div>
 
                     <div class="csv-upload-area">
                         <div class="csv-icon">⇧</div>
-                        <h3>Upload CSV File</h3>
-                        <p>Select a CSV file from your computer.</p>
+                        <h3>Choose a CSV file</h3>
+                        <p>Pick a file from your computer.</p>
 
                         <input type="file" id="csvFile" accept=".csv,text/csv">
 
                         <button type="button" id="uploadCsvBtn" class="submit-btn">
-                            Upload and Analyze
+                            Import logs
                         </button>
 
                         <p class="csv-hint">
-                            Maximum 1 MB · Up to 500 records
+                            Up to 1 MB and 500 rows per file.
                         </p>
                     </div>
 
@@ -368,33 +377,70 @@
                 </div>
 
 
-                <!-- RECORDED EVENTS -->
                 <div class="panel">
 
                     <div class="panel-heading">
                         <div>
-                            <h3>Recorded Events</h3>
-                            <p>Security log records retrieved from MySQL</p>
+                            <h3>All events</h3>
+                            <p>Everything that has been logged so far</p>
                         </div>
                     </div>
 
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>IP ADDRESS</th>
-                                    <th>EVENT</th>
-                                    <th>DESCRIPTION</th>
-                                    <th>SEVERITY</th>
-                                </tr>
-                            </thead>
+                    <div class="logs-browser-layout">
+                        <aside class="log-range-sidebar">
+                            <p class="log-range-title">Time range</p>
+                            <div class="log-range-list" role="group" aria-label="Filter events by date range">
+                                <button type="button" class="log-range-button active" data-days="all">All time</button>
+                                <button type="button" class="log-range-button" data-days="3">3 days</button>
+                                <button type="button" class="log-range-button" data-days="7">7 days</button>
+                                <button type="button" class="log-range-button" data-days="15">15 days</button>
+                                <button type="button" class="log-range-button" data-days="30">1 month</button>
+                                <button type="button" class="log-range-button" data-days="90">3 months</button>
+                            </div>
+                        </aside>
 
-                            <tbody>
-                                <tr>
-                                    <td colspan="4">Loading security logs...</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="logs-browser-main">
+                            <div class="log-browser-controls">
+                                <span id="logsCount" aria-live="polite">Loading events...</span>
+                                <div class="log-list-options">
+                                    <label for="logsPageSize">Rows</label>
+                                    <select id="logsPageSize" aria-label="Rows per page">
+                                        <option value="10" selected>10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                    <span>per page</span>
+                                </div>
+                            </div>
+
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date &amp; time</th>
+                                            <th>IP address</th>
+                                            <th>Event type</th>
+                                            <th>Description</th>
+                                            <th>Severity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="5">Loading events…</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="log-pagination">
+                                <span id="logsPageSummary">Page 1 of 1</span>
+                                <div class="log-page-controls">
+                                    <button type="button" id="logsPrevious" aria-label="Previous page">Previous</button>
+                                    <input type="range" id="logsPageSlider" min="1" max="1" value="1" aria-label="Choose log page">
+                                    <button type="button" id="logsNext" aria-label="Next page">Next</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -402,7 +448,6 @@
             </section>
 
 
-            <!-- THREAT ALERTS -->
             <section class="page" id="alerts">
 
                 <header class="topbar">
@@ -410,22 +455,20 @@
                         <p class="breadcrumb">Security Center / Threat Alerts</p>
                         <h1>Threat Alerts</h1>
                     </div>
-                    <span class="demo-label">LIVE DATABASE</span>
                 </header>
 
                 <div class="page-intro">
-                    <h2>Detected Security Threats</h2>
-                    <p>Review activities flagged by the detection engine.</p>
+                    <h2>Threats we have flagged</h2>
+                    <p>Activity that the detection rules marked as suspicious.</p>
                 </div>
 
                 <div id="alertsContainer">
-                    <div class="panel">Loading security alerts...</div>
+                    <div class="panel">Loading alerts…</div>
                 </div>
 
             </section>
 
 
-            <!-- INCIDENT HISTORY -->
             <section class="page" id="incidents">
 
                 <header class="topbar">
@@ -433,19 +476,18 @@
                         <p class="breadcrumb">Security Center / Incident History</p>
                         <h1>Incident History</h1>
                     </div>
-                    <span class="demo-label">INCIDENT RECORDS</span>
                 </header>
 
                 <div class="page-intro">
-                    <h2>Security Incident Records</h2>
-                    <p>Review previously identified security incidents.</p>
+                    <h2>Incident history</h2>
+                    <p>Track which incidents are still open and which are resolved.</p>
                 </div>
 
                 <div class="panel">
                     <div class="panel-heading">
                         <div>
-                            <h3>Security Incident Records</h3>
-                            <p>Latest security alerts retrieved from MySQL</p>
+                            <h3>Open and resolved incidents</h3>
+                            <p>Every alert, newest first</p>
                         </div>
                     </div>
 
@@ -453,19 +495,19 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ALERT ID</th>
-                                    <th>IP ADDRESS</th>
-                                    <th>THREAT TYPE</th>
-                                    <th>DESCRIPTION</th>
-                                    <th>STATUS</th>
-                                    <th>CREATED AT</th>
-                                    <th>ACTION</th>
+                                    <th>Alert ID</th>
+                                    <th>IP address</th>
+                                    <th>Threat type</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td colspan="6">Loading incident records...</td>
+                                    <td colspan="6">Loading incidents…</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -475,7 +517,6 @@
             </section>
 
 
-            <!-- DETECTION RULES -->
             <section class="page" id="rules">
 
                 <header class="topbar">
@@ -483,36 +524,35 @@
                         <p class="breadcrumb">Security Center / Detection Rules</p>
                         <h1>Detection Rules</h1>
                     </div>
-                    <span class="demo-label">CONFIGURATION</span>
                 </header>
 
                 <div class="page-intro">
-                    <h2>Security Detection Engine</h2>
-                    <p>Predefined rules used to identify suspicious behaviour.</p>
+                    <h2>How threats get flagged</h2>
+                    <p>These rules decide which events count as suspicious.</p>
                 </div>
 
                 <div class="rule-card">
                     <div>
                         <h3>Brute Force Detection</h3>
-                        <p>Identify repeated failed login attempts from an IP address.</p>
+                        <p>Flags an IP address after repeated failed logins.</p>
                     </div>
-                    <span class="rule-active">ACTIVE</span>
+                    <span class="rule-active">Active</span>
                 </div>
 
                 <div class="rule-card">
                     <div>
                         <h3>High Severity Activity Detection</h3>
-                        <p>Flag network activities marked with high severity.</p>
+                        <p>Flags any event logged as high severity.</p>
                     </div>
-                    <span class="rule-active">ACTIVE</span>
+                    <span class="rule-active">Active</span>
                 </div>
 
                 <div class="rule-card">
                     <div>
                         <h3>Unusual Request Detection</h3>
-                        <p>Flag network events identified as unusual requests.</p>
+                        <p>Flags events recorded as unusual requests.</p>
                     </div>
-                    <span class="rule-active">ACTIVE</span>
+                    <span class="rule-active">Active</span>
                 </div>
 
 
@@ -528,7 +568,6 @@
         const API_BASE = "http://localhost:8080/api";
 
 
-        // CREATE HTML ELEMENTS SAFELY
         function makeElement(tag, text, className = "") {
 
             const element = document.createElement(tag);
@@ -542,20 +581,92 @@
         }
 
 
-        // FETCH DATA FROM JAVA BACKEND
-        async function fetchAPI(endpoint) {
+        const TOKEN_KEY = "cyberguard_session_token";
 
-            const response = await fetch(API_BASE + endpoint);
+        function getAuthHeaders(extraHeaders = {}) {
+            const token = sessionStorage.getItem(TOKEN_KEY);
+            return {
+                ...extraHeaders,
+                ...(token ? { "Authorization": "Bearer " + token } : {})
+            };
+        }
+
+        function showLogin(message = "") {
+            sessionStorage.removeItem(TOKEN_KEY);
+            document.body.classList.remove("authenticated");
+            const messageElement = document.getElementById("loginMessage");
+            if (messageElement) messageElement.textContent = message;
+        }
+
+        async function login(username, password) {
+            const body = new URLSearchParams();
+            body.append("username", username);
+            body.append("password", password);
+
+            const response = await fetch(API_BASE + "/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: body.toString()
+            });
+
+            const result = await response.json();
+            if (!response.ok || result.status !== "success" || !result.token) {
+                throw new Error(result.error || "Login failed.");
+            }
+
+            sessionStorage.setItem(TOKEN_KEY, result.token);
+            const sessionResponse = await fetch(API_BASE + "/session", {
+                headers: getAuthHeaders()
+            });
+
+            if (!sessionResponse.ok) {
+                sessionStorage.removeItem(TOKEN_KEY);
+                throw new Error("Login succeeded, but the session could not be verified.");
+            }
+
+            document.body.classList.add("authenticated");
+            document.getElementById("loginForm").reset();
+            document.getElementById("loginMessage").textContent = "";
+            await loadDashboard();
+        }
+
+        async function logout() {
+            try {
+                await fetch(API_BASE + "/logout", {
+                    method: "POST",
+                    headers: getAuthHeaders()
+                });
+            } catch (error) {
+                console.warn("Logout request could not reach the server:", error);
+            } finally {
+                showLogin("You have been logged out.");
+            }
+        }
+
+        async function fetchAPI(endpoint, options = {}) {
+            const response = await fetch(API_BASE + endpoint, {
+                ...options,
+                headers: getAuthHeaders(options.headers || {})
+            });
+
+            if (response.status === 401) {
+                showLogin("Your session expired. Please sign in again.");
+                throw new Error("Session expired. Please login again.");
+            }
 
             if (!response.ok) {
-                throw new Error("Server returned " + response.status);
+                let message = "Server returned " + response.status;
+                try {
+                    const result = await response.json();
+                    message = result.error || message;
+                } catch (_) {}
+                throw new Error(message);
             }
 
             return response.json();
         }
 
 
-        // FORMAT DATABASE TIMESTAMP
         function formatDate(value) {
 
             if (!value) return "—";
@@ -570,7 +681,6 @@
         }
 
 
-        // CHECK WHETHER A LOG IS SUSPICIOUS
         function isSuspicious(log) {
 
             return (log.detection_result || "")
@@ -579,14 +689,12 @@
         }
 
 
-        // CREATE TABLE CELL
         function addCell(row, text) {
 
             row.appendChild(makeElement("td", text));
         }
 
 
-        // DISPLAY MESSAGE INSIDE TABLE
         function showTableMessage(tbody, message, columns) {
 
             tbody.replaceChildren();
@@ -601,7 +709,6 @@
         }
 
 
-        // UPDATE DASHBOARD RECENT EVENTS
         function renderDashboard(logs) {
 
             const tbody = document.querySelector(
@@ -656,8 +763,15 @@
         }
 
 
-        // UPDATE SECURITY LOGS TABLE
-        function renderLogs(logs) {
+        const logsBrowserState = {
+            days: "all",
+            page: 1,
+            pageSize: 10,
+            requestId: 0
+        };
+
+
+        function renderLogs(result) {
 
             const tbody = document.querySelector("#logs tbody");
 
@@ -665,11 +779,32 @@
 
             tbody.replaceChildren();
 
+            const logs = result.logs || [];
+            const total = result.total || 0;
+            const pageCount = Math.max(1, Math.ceil(total / logsBrowserState.pageSize));
+            const start = total === 0 ? 0 : ((logsBrowserState.page - 1) * logsBrowserState.pageSize) + 1;
+            const end = Math.min(logsBrowserState.page * logsBrowserState.pageSize, total);
+
+            document.getElementById("logsCount").textContent = total === 0
+                ? "No events found"
+                : "Showing " + start.toLocaleString() + "–" + end.toLocaleString()
+                    + " of " + total.toLocaleString() + " events";
+            document.getElementById("logsPageSummary").textContent =
+                "Page " + logsBrowserState.page.toLocaleString()
+                    + " of " + pageCount.toLocaleString();
+
+            const slider = document.getElementById("logsPageSlider");
+            slider.max = pageCount;
+            slider.value = logsBrowserState.page;
+            slider.disabled = pageCount <= 1;
+            document.getElementById("logsPrevious").disabled = logsBrowserState.page <= 1;
+            document.getElementById("logsNext").disabled = logsBrowserState.page >= pageCount;
+
             if (logs.length === 0) {
                 showTableMessage(
                     tbody,
-                    "No security logs found.",
-                    4
+                    "No events in this date range.",
+                    5
                 );
                 return;
             }
@@ -678,6 +813,7 @@
 
                 const row = document.createElement("tr");
 
+                addCell(row, formatDate(log.created_at));
                 addCell(row, log.ip_address);
                 addCell(row, log.event_type);
                 addCell(row, log.description);
@@ -697,7 +833,49 @@
         }
 
 
-        // UPDATE THREAT ALERTS
+        async function loadLogsPage() {
+
+            const requestId = ++logsBrowserState.requestId;
+            const query = new URLSearchParams({
+                days: String(logsBrowserState.days),
+                page: String(logsBrowserState.page),
+                pageSize: String(logsBrowserState.pageSize)
+            });
+
+            try {
+                const result = await fetchAPI("/logs/page?" + query.toString());
+                if (requestId !== logsBrowserState.requestId) return;
+
+                if (Array.isArray(result) || !Array.isArray(result.logs)
+                        || typeof result.total !== "number") {
+                    throw new Error(
+                        "The backend is using an older logs API. Restart it, then refresh this page."
+                    );
+                }
+
+                const pageCount = Math.max(
+                    1,
+                    Math.ceil(result.total / logsBrowserState.pageSize)
+                );
+
+                if (logsBrowserState.page > pageCount) {
+                    logsBrowserState.page = pageCount;
+                    await loadLogsPage();
+                    return;
+                }
+
+                renderLogs(result);
+
+            } catch (error) {
+                if (requestId !== logsBrowserState.requestId) return;
+                const tbody = document.querySelector("#logs tbody");
+                if (tbody) showTableMessage(tbody, error.message, 5);
+                document.getElementById("logsCount").textContent = "Could not load events";
+                console.error("Security log page error:", error);
+            }
+        }
+
+
         function renderAlerts(alerts) {
 
             const container = document.querySelector("#alertsContainer");
@@ -733,7 +911,7 @@
 
                 const severity = makeElement(
                     "span",
-                    "SECURITY ALERT",
+                    "Security alert",
                     "severity high"
                 );
 
@@ -778,7 +956,6 @@
         }
 
 
-        // DISPLAY INCIDENT HISTORY FROM MYSQL
 
         function renderIncidents(alerts) {
 
@@ -806,7 +983,6 @@
                 addCell(row, alert.threat_type);
                 addCell(row, alert.description);
 
-                // Incident status
                 const statusCell = document.createElement("td");
                 const statusValue = alert.status || "OPEN";
 
@@ -821,7 +997,6 @@
 
                 addCell(row, formatDate(alert.created_at));
 
-                // Resolve action
                 const actionCell = document.createElement("td");
 
                 if (statusValue.toUpperCase() === "OPEN") {
@@ -855,33 +1030,21 @@
         }
 
 
-        // RESOLVE SECURITY INCIDENT
         async function resolveIncident(alertId) {
 
-            if (!confirm("Are you sure you want to resolve this incident?")) {
+            if (!confirm("Mark this incident as resolved?")) {
                 return;
             }
 
             try {
 
-                const response = await fetch(
-                    API_BASE + "/alerts/" + encodeURIComponent(alertId) + "/resolve",
-                    {
-                        method: "POST"
-                    }
+                const result = await fetchAPI(
+                    "/alerts/" + encodeURIComponent(alertId) + "/resolve",
+                    { method: "POST" }
                 );
 
-                const result = await response.json();
+                alert("Incident resolved.");
 
-                if (!response.ok) {
-                    throw new Error(
-                        result.error || "Unable to resolve incident"
-                    );
-                }
-
-                alert("Incident resolved successfully!");
-
-                // Reload database records and dashboard statistics
                 await loadDashboard();
 
             } catch (error) {
@@ -893,7 +1056,6 @@
             }
         }
 
-        // RENDER SECURITY ACTIVITY CHART USING MYSQL LOGS
         function renderActivityChart(logs) {
 
             const chart = document.getElementById("activityChart");
@@ -1012,7 +1174,6 @@
         }
 
 
-        // RENDER THREAT OVERVIEW USING MYSQL LOGS
         function renderThreatOverview(logs) {
 
             const container = document.getElementById("threatOverview");
@@ -1100,8 +1261,7 @@
             container.appendChild(
                 makeElement(
                     "small",
-                    "Based on " + suspiciousLogs.length +
-                    " suspicious records retrieved from MySQL."
+                    "Based on " + suspiciousLogs.length + " suspicious events."
                 )
             );
 
@@ -1114,7 +1274,6 @@
 
 
 
-        // UPDATE DASHBOARD STATISTICS
         function renderSummary(summary) {
 
             document.getElementById("totalEvents").textContent =
@@ -1131,7 +1290,6 @@
         }
 
 
-        // LOAD ALL DATA FROM MYSQL THROUGH JAVA
         async function loadDashboard() {
 
             try {
@@ -1144,32 +1302,22 @@
 
                 ]);
 
-                // Update dashboard numbers
                 renderSummary(summary);
 
-                // Update charts using actual database logs
                 renderActivityChart(logs);
                 renderThreatOverview(logs);
 
-                // Update dashboard event table
                 renderDashboard(logs);
 
-                // Update security logs page
-                renderLogs(logs);
+                await loadLogsPage();
 
-                // Update threat alerts page
                 renderAlerts(alerts);
 
-                // Update incident history page
                 renderIncidents(alerts);
 
-                console.log("CyberGuard data loaded successfully.");
 
-                console.log("Dashboard statistics:", summary);
 
-                console.log("Security logs:", logs);
 
-                console.log("Security alerts:", alerts);
 
             } catch (error) {
 
@@ -1180,14 +1328,10 @@
                 document.getElementById("flaggedIPs").textContent = "!";
                 document.getElementById("resolvedIncidents").textContent = "!";
 
-                console.log(
-                    "Check whether the Java backend is running on port 8080."
-                );
             }
         }
 
 
-        // DISPLAY CURRENT DATE
         function displayCurrentDate() {
 
             const dateElement = document.getElementById("currentDate");
@@ -1203,9 +1347,7 @@
         }
 
 
-        // CSV FILE IMPORT
 
-        // Parse CSV while supporting commas and quotes inside fields
         function parseCSV(text) {
 
             const rows = [];
@@ -1267,7 +1409,6 @@
         }
 
 
-        // VALIDATE IPV4 ADDRESS
         function isValidIPv4(ip) {
 
             const parts = ip.split(".");
@@ -1281,7 +1422,6 @@
         }
 
 
-        // UPLOAD AND PROCESS CSV
         document.getElementById("uploadCsvBtn").addEventListener("click", async function () {
 
             const fileInput = document.getElementById("csvFile");
@@ -1312,7 +1452,7 @@
             }
 
             button.disabled = true;
-            button.textContent = "Processing CSV...";
+            button.textContent = "Importing…";
 
             try {
 
@@ -1410,9 +1550,9 @@
 
                         const response = await fetch(API_BASE + "/logs", {
                             method: "POST",
-                            headers: {
+                            headers: getAuthHeaders({
                                 "Content-Type": "application/x-www-form-urlencoded"
-                            },
+                            }),
                             body: data.toString()
                         });
 
@@ -1434,15 +1574,14 @@
                     }
                 }
 
-                // REFRESH DASHBOARD, LOGS AND ALERTS
                 await loadDashboard();
 
                 message.className = successful > 0 ? "success" : "error";
 
                 message.textContent =
-                    "CSV processing completed!\n" +
-                    "Successfully submitted: " + successful + "\n" +
-                    "Failed records: " + failed;
+                    "Import finished.\n" +
+                    "Imported: " + successful + "\n" +
+                    "Failed: " + failed;
 
                 if (errors.length > 0) {
                     message.textContent +=
@@ -1461,23 +1600,105 @@
             } finally {
 
                 button.disabled = false;
-                button.textContent = "Upload and Analyze";
+                button.textContent = "Import logs";
             }
 
         });
 
 
-        // LOAD DATA WHEN PAGE OPENS
-        document.addEventListener("DOMContentLoaded", () => {
-
+        document.addEventListener("DOMContentLoaded", async () => {
             displayCurrentDate();
 
-            loadDashboard();
+            document.querySelectorAll(".log-range-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    logsBrowserState.days = button.dataset.days;
+                    logsBrowserState.page = 1;
+                    document.querySelectorAll(".log-range-button").forEach(option => {
+                        option.classList.toggle("active", option === button);
+                    });
+                    loadLogsPage();
+                });
+            });
 
+            document.getElementById("logsPageSize").addEventListener("change", event => {
+                logsBrowserState.pageSize = Number(event.target.value);
+                logsBrowserState.page = 1;
+                loadLogsPage();
+            });
+
+            document.getElementById("logsPrevious").addEventListener("click", () => {
+                if (logsBrowserState.page > 1) {
+                    logsBrowserState.page--;
+                    loadLogsPage();
+                }
+            });
+
+            document.getElementById("logsNext").addEventListener("click", () => {
+                logsBrowserState.page++;
+                loadLogsPage();
+            });
+
+            const logsSlider = document.getElementById("logsPageSlider");
+            logsSlider.addEventListener("input", () => {
+                document.getElementById("logsPageSummary").textContent =
+                    "Page " + Number(logsSlider.value).toLocaleString()
+                        + " of " + Number(logsSlider.max).toLocaleString();
+            });
+            logsSlider.addEventListener("change", () => {
+                logsBrowserState.page = Number(logsSlider.value);
+                loadLogsPage();
+            });
+
+            document.getElementById("loginForm").addEventListener("submit", async event => {
+                event.preventDefault();
+
+                const button = document.getElementById("loginButton");
+                const message = document.getElementById("loginMessage");
+                const username = document.getElementById("loginUsername").value.trim();
+                const password = document.getElementById("loginPassword").value;
+
+                button.disabled = true;
+                button.textContent = "Signing in…";
+                message.textContent = "";
+
+                try {
+                    await login(username, password);
+                } catch (error) {
+                    message.textContent = error.message;
+                } finally {
+                    button.disabled = false;
+                    button.textContent = "Sign In";
+                    document.getElementById("loginPassword").value = "";
+                }
+            });
+
+            document.getElementById("logoutButton").addEventListener("click", logout);
+
+            const token = sessionStorage.getItem(TOKEN_KEY);
+            if (!token) {
+                showLogin();
+                return;
+            }
+
+            try {
+                const response = await fetch(API_BASE + "/session", {
+                    headers: getAuthHeaders()
+                });
+
+                if (!response.ok) {
+                    showLogin("Your session has expired. Please sign in.");
+                    return;
+                }
+
+                document.body.classList.add("authenticated");
+                await loadDashboard();
+            } catch (error) {
+                showLogin("Unable to verify your session. Please sign in again.");
+                console.error("Session verification error:", error);
+            }
         });
 
 
-        // MANUAL NETWORK ACTIVITY SUBMISSION
         document.getElementById("logForm").addEventListener("submit", async function (event) {
 
             event.preventDefault();
@@ -1498,7 +1719,7 @@
             data.append("description", description);
 
             button.disabled = true;
-            button.textContent = "Analyzing Activity...";
+            button.textContent = "Checking…";
 
             message.textContent = "";
             message.className = "";
@@ -1507,9 +1728,9 @@
 
                 const response = await fetch(API_BASE + "/logs", {
                     method: "POST",
-                    headers: {
+                    headers: getAuthHeaders({
                         "Content-Type": "application/x-www-form-urlencoded"
-                    },
+                    }),
                     body: data.toString()
                 });
 
@@ -1520,14 +1741,13 @@
                 }
 
                 message.textContent =
-                    "Activity submitted successfully! Detection result: " +
+                    "Event logged. Detection result: " +
                     result.detection;
 
                 message.className = "success";
 
                 document.getElementById("logForm").reset();
 
-                // REFRESH LOGS, ALERTS AND DASHBOARD STATISTICS
                 await loadDashboard();
 
             } catch (error) {
@@ -1540,19 +1760,21 @@
             } finally {
 
                 button.disabled = false;
-                button.textContent = "Submit Activity";
+                button.textContent = "Log event";
 
             }
 
         });
 
 
-        // REFRESH DATA WHEN NAVIGATING BETWEEN PAGES
-        window.addEventListener("hashchange", loadDashboard);
+        window.addEventListener("hashchange", () => {
+            if (document.body.classList.contains("authenticated")) loadDashboard();
+        });
 
 
-        // REFRESH DATA EVERY 30 SECONDS
-        setInterval(loadDashboard, 30000);
+        setInterval(() => {
+            if (document.body.classList.contains("authenticated")) loadDashboard();
+        }, 30000);
 
     </script>
 
