@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,1047 +10,1251 @@
 
 <body>
 
-<div class="app">
+    <div class="app">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
 
-        <div class="brand">
-            <div class="brand-logo">C</div>
-            <div>
-                <h2>CyberGuard</h2>
-                <p>SECURITY CENTER</p>
-            </div>
-        </div>
-
-        <p class="menu-heading">MAIN MENU</p>
-
-        <nav class="navigation">
-            <a href="#dashboard" class="nav-link">
-                <span class="nav-icon">▦</span>
-                Dashboard
-            </a>
-
-            <a href="#logs" class="nav-link">
-                <span class="nav-icon">▤</span>
-                Security Logs
-            </a>
-
-            <a href="#alerts" class="nav-link">
-                <span class="nav-icon">⚠</span>
-                Threat Alerts
-            </a>
-
-            <a href="#incidents" class="nav-link">
-                <span class="nav-icon">◷</span>
-                Incident History
-            </a>
-
-            <a href="#rules" class="nav-link">
-                <span class="nav-icon">⚙</span>
-                Detection Rules
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-
-            <div class="system-status">
-                <span class="online-dot"></span>
+            <div class="brand">
+                <div class="brand-logo">C</div>
                 <div>
-                    <strong>System Online</strong>
-                    <small>Database monitoring status</small>
+                    <h2>CyberGuard</h2>
+                    <p>SECURITY CENTER</p>
                 </div>
             </div>
 
-            <div class="profile">
-                <div class="avatar">A</div>
-                <div>
-                    <strong>Administrator</strong>
-                    <small>Security Analyst</small>
-                </div>
-            </div>
+            <p class="menu-heading">MAIN MENU</p>
 
-        </div>
-    </aside>
+            <nav class="navigation">
+                <a href="#dashboard" class="nav-link">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
 
+                <a href="#logs" class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    Security Logs
+                </a>
 
-    <!-- MAIN AREA -->
-    <main class="main-content">
+                <a href="#alerts" class="nav-link">
+                    <span class="nav-icon">⚠</span>
+                    Threat Alerts
+                </a>
 
-        <!-- DASHBOARD -->
-        <section class="page" id="dashboard">
+                <a href="#incidents" class="nav-link">
+                    <span class="nav-icon">◷</span>
+                    Incident History
+                </a>
 
-            <header class="topbar">
-                <div>
-                    <p class="breadcrumb">Security Center / Dashboard</p>
-                    <h1>Security Dashboard</h1>
-                </div>
+                <a href="#rules" class="nav-link">
+                    <span class="nav-icon">⚙</span>
+                    Detection Rules
+                </a>
+            </nav>
 
-                <div class="topbar-right">
-                    <span class="live-status">
-                        <span class="online-dot"></span>
-                        LIVE DATABASE
-                    </span>
-                    <span class="date" id="currentDate"></span>
-                </div>
-            </header>
+            <div class="sidebar-bottom">
 
-            <div class="welcome">
-                <div>
-                    <h2>Welcome back, Administrator</h2>
-                    <p>Here's an overview of your security environment.</p>
-                </div>
-                <span class="demo-label">DATABASE CONNECTED</span>
-            </div>
-
-
-            <!-- STATISTICS -->
-            <div class="stats-grid">
-
-                <div class="stat-card">
-                    <div class="stat-heading">
-                        <span>Total Events</span>
-                        <span class="stat-icon blue">▤</span>
+                <div class="system-status">
+                    <span class="online-dot"></span>
+                    <div>
+                        <strong>System Online</strong>
+                        <small>Database monitoring status</small>
                     </div>
-                    <h2 id="totalEvents">--</h2>
-                    <p>Recorded security events</p>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-heading">
-                        <span>Threats Detected</span>
-                        <span class="stat-icon red">⚠</span>
+                <div class="profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Security Analyst</small>
                     </div>
-                    <h2 id="threatsDetected">--</h2>
-                    <p>Suspicious activities</p>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-heading">
-                        <span>Flagged IPs</span>
-                        <span class="stat-icon orange">⊘</span>
-                    </div>
-                    <h2 id="flaggedIPs">--</h2>
-                    <p>IPs flagged by detection rules</p>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-heading">
-                        <span>Resolved Incidents</span>
-                        <span class="stat-icon green">✓</span>
-                    </div>
-                    <h2 id="resolvedIncidents">--</h2>
-                    <p>Marked as resolved</p>
                 </div>
 
             </div>
+        </aside>
 
 
-            <!-- CHARTS -->
-            <div class="dashboard-grid">
+        <!-- MAIN AREA -->
+        <main class="main-content">
 
-                <div class="panel activity-panel">
+            <!-- DASHBOARD -->
+            <section class="page" id="dashboard">
+
+                <header class="topbar">
+                    <div>
+                        <p class="breadcrumb">Security Center / Dashboard</p>
+                        <h1>Security Dashboard</h1>
+                    </div>
+
+                    <div class="topbar-right">
+                        <span class="live-status">
+                            <span class="online-dot"></span>
+                            LIVE DATABASE
+                        </span>
+                        <span class="date" id="currentDate"></span>
+                    </div>
+                </header>
+
+                <div class="welcome">
+                    <div>
+                        <h2>Welcome back, Administrator</h2>
+                        <p>Here's an overview of your security environment.</p>
+                    </div>
+                    <span class="demo-label">DATABASE CONNECTED</span>
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-heading">
+                            <span>Total Events</span>
+                            <span class="stat-icon blue">▤</span>
+                        </div>
+                        <h2 id="totalEvents">--</h2>
+                        <p>Recorded security events</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-heading">
+                            <span>Threats Detected</span>
+                            <span class="stat-icon red">⚠</span>
+                        </div>
+                        <h2 id="threatsDetected">--</h2>
+                        <p>Suspicious activities</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-heading">
+                            <span>Flagged IPs</span>
+                            <span class="stat-icon orange">⊘</span>
+                        </div>
+                        <h2 id="flaggedIPs">--</h2>
+                        <p>IPs flagged by detection rules</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-heading">
+                            <span>Resolved Incidents</span>
+                            <span class="stat-icon green">✓</span>
+                        </div>
+                        <h2 id="resolvedIncidents">--</h2>
+                        <p>Marked as resolved</p>
+                    </div>
+
+                </div>
+
+
+                <!-- CHARTS -->
+                <div class="dashboard-grid">
+
+
+                    <div class="panel activity-panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Security Activity</h3>
+                                <p>Actual network events recorded in MySQL — last 7 days</p>
+                            </div>
+                            <span class="tag">LIVE DATA</span>
+                        </div>
+
+                        <div class="chart">
+                            <div class="y-axis" id="activityYAxis">
+                                <span>0</span>
+                                <span>0</span>
+                                <span>0</span>
+                                <span>0</span>
+                                <span>0</span>
+                            </div>
+
+                            <div class="chart-content">
+                                <div class="grid-lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="bar-container" id="activityChart">
+                                    <p>Loading activity data...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-legend">
+                            <span><i class="legend-blue"></i>Total Events</span>
+                            <span><i class="legend-red"></i>Suspicious Events</span>
+                        </div>
+
+                    </div>
+
+                    <div class="panel threat-panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Threat Overview</h3>
+                                <p>Distribution of suspicious activities from MySQL</p>
+                            </div>
+                            <span class="tag">LIVE DATA</span>
+                        </div>
+
+                        <div id="threatOverview">
+                            <p>Loading threat statistics...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- RECENT EVENTS -->
+                <div class="panel events-panel">
 
                     <div class="panel-heading">
                         <div>
-                            <h3>Security Activity</h3>
-                            <p>Sample activity visualization</p>
+                            <h3>Recent Security Events</h3>
+                            <p>Latest recorded activity from MySQL</p>
                         </div>
-                        <span class="tag">Demo Chart</span>
+
+                        <a href="#logs" class="view-link">View All →</a>
                     </div>
 
-                    <div class="chart">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>IP ADDRESS</th>
+                                    <th>EVENT TYPE</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>SEVERITY</th>
+                                    <th>STATUS</th>
 
-                        <div class="y-axis">
-                            <span>100</span>
-                            <span>75</span>
-                            <span>50</span>
-                            <span>25</span>
-                            <span>0</span>
-                        </div>
+                                </tr>
+                            </thead>
 
-                        <div class="chart-content">
-
-                            <div class="grid-lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <div class="bar-container">
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:45%"></span>
-                                        <span class="bar threat" style="height:18%"></span>
-                                    </div>
-                                    <small>Mon</small>
-                                </div>
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:65%"></span>
-                                        <span class="bar threat" style="height:25%"></span>
-                                    </div>
-                                    <small>Tue</small>
-                                </div>
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:55%"></span>
-                                        <span class="bar threat" style="height:15%"></span>
-                                    </div>
-                                    <small>Wed</small>
-                                </div>
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:85%"></span>
-                                        <span class="bar threat" style="height:35%"></span>
-                                    </div>
-                                    <small>Thu</small>
-                                </div>
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:60%"></span>
-                                        <span class="bar threat" style="height:22%"></span>
-                                    </div>
-                                    <small>Fri</small>
-                                </div>
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:75%"></span>
-                                        <span class="bar threat" style="height:30%"></span>
-                                    </div>
-                                    <small>Sat</small>
-                                </div>
-
-                                <div class="bar-group">
-                                    <div class="bars">
-                                        <span class="bar total" style="height:50%"></span>
-                                        <span class="bar threat" style="height:20%"></span>
-                                    </div>
-                                    <small>Sun</small>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="chart-legend">
-                        <span><i class="legend-blue"></i>Total Events</span>
-                        <span><i class="legend-red"></i>Threats</span>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5">Loading security events...</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
 
+                <footer>
+                    CyberGuard Security Center | Educational Monitoring Simulator
+                </footer>
 
-                <div class="panel threat-panel">
+            </section>
+
+
+            <!-- SECURITY LOGS -->
+            <section class="page" id="logs">
+
+                <header class="topbar">
+                    <div>
+                        <p class="breadcrumb">Security Center / Security Logs</p>
+                        <h1>Security Logs</h1>
+                    </div>
+                    <span class="demo-label">LIVE DATABASE</span>
+                </header>
+
+                <div class="page-intro">
+                    <h2>Network Activity Records</h2>
+                    <p>Review recorded login attempts and network activity.</p>
+                </div>
+
+
+                <!-- MANUAL NETWORK ACTIVITY ENTRY -->
+                <div class="panel entry-panel">
 
                     <div class="panel-heading">
                         <div>
-                            <h3>Threat Overview</h3>
-                            <p>Distribution of detected threats</p>
+                            <h3>Submit Network Activity</h3>
+                            <p>Manually submit a network event for security analysis.</p>
                         </div>
+                        <span class="demo-label">MANUAL ENTRY</span>
                     </div>
 
-                    <div class="threat-item">
-                        <div class="threat-label">
-                            <span>Brute Force Attempts</span>
-                            <strong>Demo</strong>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar red-fill" style="width:45%"></div>
-                        </div>
-                    </div>
+                    <form id="logForm">
 
-                    <div class="threat-item">
-                        <div class="threat-label">
-                            <span>Suspicious IP Activity</span>
-                            <strong>Demo</strong>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar orange-fill" style="width:30%"></div>
-                        </div>
-                    </div>
+                        <div class="form-grid">
 
-                    <div class="threat-item">
-                        <div class="threat-label">
-                            <span>Unusual Requests</span>
-                            <strong>Demo</strong>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar blue-fill" style="width:15%"></div>
-                        </div>
-                    </div>
+                            <div class="form-group">
+                                <label for="ipAddress">IP Address</label>
+                                <input type="text" id="ipAddress" placeholder="Example: 192.168.1.100" required
+                                    pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$" title="Enter an IPv4 address">
+                            </div>
 
-                    <div class="threat-item">
-                        <div class="threat-label">
-                            <span>Other Events</span>
-                            <strong>Demo</strong>
+                            <div class="form-group">
+                                <label for="eventType">Event Type</label>
+                                <select id="eventType" required>
+                                    <option value="">Select event type</option>
+                                    <option value="Failed Login">Failed Login</option>
+                                    <option value="Successful Login">Successful Login</option>
+                                    <option value="HTTP Request">HTTP Request</option>
+                                    <option value="Suspicious Request">Suspicious Request</option>
+                                    <option value="Port Scan">Port Scan</option>
+                                    <option value="File Access">File Access</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="severity">Severity</label>
+                                <select id="severity" required>
+                                    <option value="">Select severity</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" placeholder="Describe the network activity..." rows="3"
+                                    required></textarea>
+                            </div>
+
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar green-fill" style="width:10%"></div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn" id="submitLogBtn">
+                                Submit Activity
+                            </button>
                         </div>
-                    </div>
+
+                        <div id="formMessage" role="status" aria-live="polite"></div>
+
+                    </form>
 
                 </div>
 
-            </div>
 
+                <!-- CSV NETWORK LOG IMPORT -->
+                <div class="panel csv-panel">
 
-            <!-- RECENT EVENTS -->
-            <div class="panel events-panel">
-
-                <div class="panel-heading">
-                    <div>
-                        <h3>Recent Security Events</h3>
-                        <p>Latest recorded activity from MySQL</p>
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Import Network Logs</h3>
+                            <p>Upload a CSV file containing multiple network activity records.</p>
+                        </div>
+                        <span class="demo-label">BULK IMPORT</span>
                     </div>
 
-                    <a href="#logs" class="view-link">View All →</a>
-                </div>
+                    <div class="csv-upload-area">
+                        <div class="csv-icon">⇧</div>
+                        <h3>Upload CSV File</h3>
+                        <p>Select a CSV file from your computer.</p>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>IP ADDRESS</th>
-                                <th>EVENT TYPE</th>
-                                <th>DESCRIPTION</th>
-                                <th>SEVERITY</th>
-                                <th>STATUS</th>
-                            </tr>
-                        </thead>
+                        <input type="file" id="csvFile" accept=".csv,text/csv">
 
-                        <tbody>
-                            <tr>
-                                <td colspan="5">Loading security events...</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-            <footer>
-                CyberGuard Security Center | Educational Monitoring Simulator
-            </footer>
-
-        </section>
-
-
-        <!-- SECURITY LOGS -->
-        <section class="page" id="logs">
-
-            <header class="topbar">
-                <div>
-                    <p class="breadcrumb">Security Center / Security Logs</p>
-                    <h1>Security Logs</h1>
-                </div>
-                <span class="demo-label">LIVE DATABASE</span>
-            </header>
-
-            <div class="page-intro">
-                <h2>Network Activity Records</h2>
-                <p>Review recorded login attempts and network activity.</p>
-            </div>
-
-
-            <!-- MANUAL NETWORK ACTIVITY ENTRY -->
-            <div class="panel entry-panel">
-
-                <div class="panel-heading">
-                    <div>
-                        <h3>Submit Network Activity</h3>
-                        <p>Manually submit a network event for security analysis.</p>
-                    </div>
-                    <span class="demo-label">MANUAL ENTRY</span>
-                </div>
-
-                <form id="logForm">
-
-                    <div class="form-grid">
-
-                        <div class="form-group">
-                            <label for="ipAddress">IP Address</label>
-                            <input
-                                type="text"
-                                id="ipAddress"
-                                placeholder="Example: 192.168.1.100"
-                                required
-                                pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$"
-                                title="Enter an IPv4 address"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="eventType">Event Type</label>
-                            <select id="eventType" required>
-                                <option value="">Select event type</option>
-                                <option value="Failed Login">Failed Login</option>
-                                <option value="Successful Login">Successful Login</option>
-                                <option value="HTTP Request">HTTP Request</option>
-                                <option value="Suspicious Request">Suspicious Request</option>
-                                <option value="Port Scan">Port Scan</option>
-                                <option value="File Access">File Access</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="severity">Severity</label>
-                            <select id="severity" required>
-                                <option value="">Select severity</option>
-                                <option value="Low">Low</option>
-                                <option value="Medium">Medium</option>
-                                <option value="High">High</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea
-                                id="description"
-                                placeholder="Describe the network activity..."
-                                rows="3"
-                                required
-                            ></textarea>
-                        </div>
-
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn" id="submitLogBtn">
-                            Submit Activity
+                        <button type="button" id="uploadCsvBtn" class="submit-btn">
+                            Upload and Analyze
                         </button>
+
+                        <p class="csv-hint">
+                            Maximum 1 MB · Up to 500 records
+                        </p>
                     </div>
 
-                    <div id="formMessage" role="status" aria-live="polite"></div>
+                    <div id="csvMessage" role="status" aria-live="polite"></div>
 
-                </form>
-
-            </div>
+                </div>
 
 
-            <!-- CSV NETWORK LOG IMPORT -->
-            <div class="panel csv-panel">
+                <!-- RECORDED EVENTS -->
+                <div class="panel">
 
-                <div class="panel-heading">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Recorded Events</h3>
+                            <p>Security log records retrieved from MySQL</p>
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>IP ADDRESS</th>
+                                    <th>EVENT</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>SEVERITY</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td colspan="4">Loading security logs...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- THREAT ALERTS -->
+            <section class="page" id="alerts">
+
+                <header class="topbar">
                     <div>
-                        <h3>Import Network Logs</h3>
-                        <p>Upload a CSV file containing multiple network activity records.</p>
+                        <p class="breadcrumb">Security Center / Threat Alerts</p>
+                        <h1>Threat Alerts</h1>
                     </div>
-                    <span class="demo-label">BULK IMPORT</span>
+                    <span class="demo-label">LIVE DATABASE</span>
+                </header>
+
+                <div class="page-intro">
+                    <h2>Detected Security Threats</h2>
+                    <p>Review activities flagged by the detection engine.</p>
                 </div>
 
-                <div class="csv-upload-area">
-                    <div class="csv-icon">⇧</div>
-                    <h3>Upload CSV File</h3>
-                    <p>Select a CSV file from your computer.</p>
-
-                    <input
-                        type="file"
-                        id="csvFile"
-                        accept=".csv,text/csv"
-                    >
-
-                    <button type="button" id="uploadCsvBtn" class="submit-btn">
-                        Upload and Analyze
-                    </button>
-
-                    <p class="csv-hint">
-                        Maximum 1 MB · Up to 500 records
-                    </p>
+                <div id="alertsContainer">
+                    <div class="panel">Loading security alerts...</div>
                 </div>
 
-                <div id="csvMessage" role="status" aria-live="polite"></div>
-
-            </div>
+            </section>
 
 
-            <!-- RECORDED EVENTS -->
-            <div class="panel">
+            <!-- INCIDENT HISTORY -->
+            <section class="page" id="incidents">
 
-                <div class="panel-heading">
+                <header class="topbar">
                     <div>
-                        <h3>Recorded Events</h3>
-                        <p>Security log records retrieved from MySQL</p>
+                        <p class="breadcrumb">Security Center / Incident History</p>
+                        <h1>Incident History</h1>
+                    </div>
+                    <span class="demo-label">INCIDENT RECORDS</span>
+                </header>
+
+                <div class="page-intro">
+                    <h2>Security Incident Records</h2>
+                    <p>Review previously identified security incidents.</p>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Security Incident Records</h3>
+                            <p>Latest security alerts retrieved from MySQL</p>
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ALERT ID</th>
+                                    <th>IP ADDRESS</th>
+                                    <th>THREAT TYPE</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>STATUS</th>
+                                    <th>CREATED AT</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td colspan="6">Loading incident records...</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>IP ADDRESS</th>
-                                <th>EVENT</th>
-                                <th>DESCRIPTION</th>
-                                <th>SEVERITY</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td colspan="4">Loading security logs...</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- THREAT ALERTS -->
-        <section class="page" id="alerts">
+            <!-- DETECTION RULES -->
+            <section class="page" id="rules">
 
-            <header class="topbar">
-                <div>
-                    <p class="breadcrumb">Security Center / Threat Alerts</p>
-                    <h1>Threat Alerts</h1>
-                </div>
-                <span class="demo-label">LIVE DATABASE</span>
-            </header>
-
-            <div class="page-intro">
-                <h2>Detected Security Threats</h2>
-                <p>Review activities flagged by the detection engine.</p>
-            </div>
-
-            <div id="alertsContainer">
-                <div class="panel">Loading security alerts...</div>
-            </div>
-
-        </section>
-
-
-        <!-- INCIDENT HISTORY -->
-        <section class="page" id="incidents">
-
-            <header class="topbar">
-                <div>
-                    <p class="breadcrumb">Security Center / Incident History</p>
-                    <h1>Incident History</h1>
-                </div>
-                <span class="demo-label">INCIDENT RECORDS</span>
-            </header>
-
-            <div class="page-intro">
-                <h2>Security Incident Records</h2>
-                <p>Review previously identified security incidents.</p>
-            </div>
-
-            <div class="panel">
-                <div class="panel-heading">
+                <header class="topbar">
                     <div>
-                        <h3>Security Incident Records</h3>
-                        <p>Latest security alerts retrieved from MySQL</p>
+                        <p class="breadcrumb">Security Center / Detection Rules</p>
+                        <h1>Detection Rules</h1>
                     </div>
+                    <span class="demo-label">CONFIGURATION</span>
+                </header>
+
+                <div class="page-intro">
+                    <h2>Security Detection Engine</h2>
+                    <p>Predefined rules used to identify suspicious behaviour.</p>
                 </div>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ALERT ID</th>
-                                <th>IP ADDRESS</th>
-                                <th>THREAT TYPE</th>
-                                <th>DESCRIPTION</th>
-                                <th>STATUS</th>
-                                <th>CREATED AT</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td colspan="6">Loading incident records...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="rule-card">
+                    <div>
+                        <h3>Brute Force Detection</h3>
+                        <p>Identify repeated failed login attempts from an IP address.</p>
+                    </div>
+                    <span class="rule-active">ACTIVE</span>
                 </div>
-            </div>
 
-        </section>
-
-
-        <!-- DETECTION RULES -->
-        <section class="page" id="rules">
-
-            <header class="topbar">
-                <div>
-                    <p class="breadcrumb">Security Center / Detection Rules</p>
-                    <h1>Detection Rules</h1>
+                <div class="rule-card">
+                    <div>
+                        <h3>High Severity Activity Detection</h3>
+                        <p>Flag network activities marked with high severity.</p>
+                    </div>
+                    <span class="rule-active">ACTIVE</span>
                 </div>
-                <span class="demo-label">CONFIGURATION</span>
-            </header>
 
-            <div class="page-intro">
-                <h2>Security Detection Engine</h2>
-                <p>Predefined rules used to identify suspicious behaviour.</p>
-            </div>
-
-            <div class="rule-card">
-                <div>
-                    <h3>Brute Force Detection</h3>
-                    <p>Identify repeated failed login attempts from an IP address.</p>
+                <div class="rule-card">
+                    <div>
+                        <h3>Unusual Request Detection</h3>
+                        <p>Flag network events identified as unusual requests.</p>
+                    </div>
+                    <span class="rule-active">ACTIVE</span>
                 </div>
-                <span class="rule-active">ACTIVE</span>
-            </div>
 
-            <div class="rule-card">
-                <div>
-                    <h3>Suspicious IP Detection</h3>
-                    <p>Flag IP addresses associated with suspicious events.</p>
-                </div>
-                <span class="rule-active">ACTIVE</span>
-            </div>
 
-            <div class="rule-card">
-                <div>
-                    <h3>Unusual Request Detection</h3>
-                    <p>Identify excessive requests within a short time window.</p>
-                </div>
-                <span class="rule-active">ACTIVE</span>
-            </div>
 
-            <div class="rule-card">
-                <div>
-                    <h3>Repeated Authentication Failure</h3>
-                    <p>Identify abnormal authentication failure patterns.</p>
-                </div>
-                <span class="rule-active">ACTIVE</span>
-            </div>
+            </section>
 
-        </section>
+        </main>
 
-    </main>
+    </div>
 
-</div>
 
+    <script>
+        const API_BASE = "http://localhost:8080/api";
 
-<script>
-const API_BASE = "http://localhost:8080/api";
 
+        // CREATE HTML ELEMENTS SAFELY
+        function makeElement(tag, text, className = "") {
 
-// CREATE HTML ELEMENTS SAFELY
-function makeElement(tag, text, className = "") {
+            const element = document.createElement(tag);
+            element.textContent = text ?? "";
 
-    const element = document.createElement(tag);
-    element.textContent = text ?? "";
-
-    if (className) {
-        element.className = className;
-    }
-
-    return element;
-}
-
-
-// FETCH DATA FROM JAVA BACKEND
-async function fetchAPI(endpoint) {
-
-    const response = await fetch(API_BASE + endpoint);
-
-    if (!response.ok) {
-        throw new Error("Server returned " + response.status);
-    }
-
-    return response.json();
-}
-
-
-// FORMAT DATABASE TIMESTAMP
-function formatDate(value) {
-
-    if (!value) return "—";
-
-    const date = new Date(value.replace(" ", "T"));
-
-    if (Number.isNaN(date.getTime())) {
-        return value;
-    }
-
-    return date.toLocaleString();
-}
-
-
-// CHECK WHETHER A LOG IS SUSPICIOUS
-function isSuspicious(log) {
-
-    return (log.detection_result || "")
-        .toUpperCase()
-        .startsWith("SUSPICIOUS");
-}
-
-
-// CREATE TABLE CELL
-function addCell(row, text) {
-
-    row.appendChild(makeElement("td", text));
-}
-
-
-// DISPLAY MESSAGE INSIDE TABLE
-function showTableMessage(tbody, message, columns) {
-
-    tbody.replaceChildren();
-
-    const row = document.createElement("tr");
-    const cell = makeElement("td", message);
-
-    cell.colSpan = columns;
-
-    row.appendChild(cell);
-    tbody.appendChild(row);
-}
-
-
-// UPDATE DASHBOARD RECENT EVENTS
-function renderDashboard(logs) {
-
-    const tbody = document.querySelector(
-        "#dashboard .events-panel tbody"
-    );
-
-    if (!tbody) return;
-
-    tbody.replaceChildren();
-
-    if (logs.length === 0) {
-        showTableMessage(
-            tbody,
-            "No security events recorded yet.",
-            5
-        );
-        return;
-    }
-
-    logs.slice(0, 5).forEach(log => {
-
-        const row = document.createElement("tr");
-
-        addCell(row, log.ip_address);
-        addCell(row, log.event_type);
-        addCell(row, log.description);
-
-        const severity = makeElement(
-            "span",
-            log.severity || "Unknown",
-            "severity " + (log.severity || "low").toLowerCase()
-        );
-
-        const severityCell = document.createElement("td");
-        severityCell.appendChild(severity);
-        row.appendChild(severityCell);
-
-        const suspicious = isSuspicious(log);
-
-        const status = makeElement(
-            "span",
-            suspicious ? "Detected" : "Normal",
-            "status " + (suspicious ? "detected" : "normal")
-        );
-
-        const statusCell = document.createElement("td");
-        statusCell.appendChild(status);
-        row.appendChild(statusCell);
-
-        tbody.appendChild(row);
-    });
-}
-
-
-// UPDATE SECURITY LOGS TABLE
-function renderLogs(logs) {
-
-    const tbody = document.querySelector("#logs tbody");
-
-    if (!tbody) return;
-
-    tbody.replaceChildren();
-
-    if (logs.length === 0) {
-        showTableMessage(
-            tbody,
-            "No security logs found.",
-            4
-        );
-        return;
-    }
-
-    logs.forEach(log => {
-
-        const row = document.createElement("tr");
-
-        addCell(row, log.ip_address);
-        addCell(row, log.event_type);
-        addCell(row, log.description);
-
-        const severity = makeElement(
-            "span",
-            log.severity || "Unknown",
-            "severity " + (log.severity || "low").toLowerCase()
-        );
-
-        const cell = document.createElement("td");
-        cell.appendChild(severity);
-        row.appendChild(cell);
-
-        tbody.appendChild(row);
-    });
-}
-
-
-// UPDATE THREAT ALERTS
-function renderAlerts(alerts) {
-
-    const container = document.querySelector("#alertsContainer");
-
-    if (!container) return;
-
-    container.replaceChildren();
-
-    if (alerts.length === 0) {
-
-        container.appendChild(
-            makeElement(
-                "div",
-                "No security alerts recorded yet.",
-                "panel"
-            )
-        );
-
-        return;
-    }
-
-    alerts.forEach(alert => {
-
-        const card = makeElement("div", "", "alert-card");
-
-        const symbol = makeElement(
-            "div",
-            "!",
-            "alert-symbol"
-        );
-
-        const details = document.createElement("div");
-
-        const severity = makeElement(
-            "span",
-            "SECURITY ALERT",
-            "severity high"
-        );
-
-        const heading = makeElement(
-            "h3",
-            alert.threat_type || "Security Threat"
-        );
-
-        const ip = makeElement(
-            "p",
-            "IP: " + alert.ip_address
-        );
-
-        const description = makeElement(
-            "small",
-            alert.description
-        );
-
-        const status = makeElement(
-            "p",
-            "Status: " + (alert.status || "OPEN")
-        );
-
-        const timestamp = makeElement(
-            "small",
-            "Created: " + formatDate(alert.created_at)
-        );
-
-        details.append(
-            severity,
-            heading,
-            ip,
-            description,
-            status,
-            timestamp
-        );
-
-        card.append(symbol, details);
-
-        container.appendChild(card);
-    });
-}
-
-
-// DISPLAY INCIDENT HISTORY FROM MYSQL
-function renderIncidents(alerts) {
-
-    const tbody = document.querySelector("#incidents tbody");
-
-    if (!tbody) return;
-
-    tbody.replaceChildren();
-
-    if (!alerts || alerts.length === 0) {
-        showTableMessage(
-            tbody,
-            "No security incidents recorded yet.",
-            6
-        );
-        return;
-    }
-
-    alerts.forEach(alert => {
-
-        const row = document.createElement("tr");
-
-        addCell(row, alert.alert_id);
-        addCell(row, alert.ip_address);
-        addCell(row, alert.threat_type);
-        addCell(row, alert.description);
-
-        const statusCell = document.createElement("td");
-        const statusValue = alert.status || "OPEN";
-
-        const status = makeElement(
-            "span",
-            statusValue,
-            "status " + statusValue.toLowerCase()
-        );
-
-        statusCell.appendChild(status);
-        row.appendChild(statusCell);
-
-        addCell(row, formatDate(alert.created_at));
-
-        tbody.appendChild(row);
-    });
-}
-
-
-// UPDATE DASHBOARD STATISTICS
-function renderSummary(summary) {
-
-    document.getElementById("totalEvents").textContent =
-        summary.total_events ?? 0;
-
-    document.getElementById("threatsDetected").textContent =
-        summary.threats_detected ?? 0;
-
-    document.getElementById("flaggedIPs").textContent =
-        summary.flagged_ips ?? 0;
-
-    document.getElementById("resolvedIncidents").textContent =
-        summary.resolved_incidents ?? 0;
-}
-
-
-// LOAD ALL DATA FROM MYSQL THROUGH JAVA
-async function loadDashboard() {
-
-    try {
-
-        const [logs, alerts, summary] = await Promise.all([
-
-            fetchAPI("/logs"),
-            fetchAPI("/alerts"),
-            fetchAPI("/summary")
-
-        ]);
-
-        // Update dashboard numbers
-        renderSummary(summary);
-
-        // Update dashboard event table
-        renderDashboard(logs);
-
-        // Update security logs page
-        renderLogs(logs);
-
-        // Update threat alerts page
-        renderAlerts(alerts);
-
-        // Update incident history page
-        renderIncidents(alerts);
-
-        console.log("CyberGuard data loaded successfully.");
-
-        console.log("Dashboard statistics:", summary);
-
-        console.log("Security logs:", logs);
-
-        console.log("Security alerts:", alerts);
-
-    } catch (error) {
-
-        console.error("CyberGuard API error:", error);
-
-        document.getElementById("totalEvents").textContent = "!";
-        document.getElementById("threatsDetected").textContent = "!";
-        document.getElementById("flaggedIPs").textContent = "!";
-        document.getElementById("resolvedIncidents").textContent = "!";
-
-        console.log(
-            "Check whether the Java backend is running on port 8080."
-        );
-    }
-}
-
-
-// DISPLAY CURRENT DATE
-function displayCurrentDate() {
-
-    const dateElement = document.getElementById("currentDate");
-
-    if (dateElement) {
-        dateElement.textContent =
-            new Date().toLocaleDateString("en-IN", {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-            });
-    }
-}
-
-
-// CSV FILE IMPORT
-
-// Parse CSV while supporting commas and quotes inside fields
-function parseCSV(text) {
-
-    const rows = [];
-    let row = [];
-    let field = "";
-    let insideQuotes = false;
-
-    for (let i = 0; i < text.length; i++) {
-
-        const char = text[i];
-        const next = text[i + 1];
-
-        if (char === '"') {
-
-            if (insideQuotes && next === '"') {
-                field += '"';
-                i++;
-            } else {
-                insideQuotes = !insideQuotes;
+            if (className) {
+                element.className = className;
             }
 
-        } else if (char === "," && !insideQuotes) {
+            return element;
+        }
 
-            row.push(field.trim());
-            field = "";
 
-        } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+        // FETCH DATA FROM JAVA BACKEND
+        async function fetchAPI(endpoint) {
 
-            if (char === "\r" && next === "\n") {
-                i++;
+            const response = await fetch(API_BASE + endpoint);
+
+            if (!response.ok) {
+                throw new Error("Server returned " + response.status);
+            }
+
+            return response.json();
+        }
+
+
+        // FORMAT DATABASE TIMESTAMP
+        function formatDate(value) {
+
+            if (!value) return "—";
+
+            const date = new Date(value.replace(" ", "T"));
+
+            if (Number.isNaN(date.getTime())) {
+                return value;
+            }
+
+            return date.toLocaleString();
+        }
+
+
+        // CHECK WHETHER A LOG IS SUSPICIOUS
+        function isSuspicious(log) {
+
+            return (log.detection_result || "")
+                .toUpperCase()
+                .startsWith("SUSPICIOUS");
+        }
+
+
+        // CREATE TABLE CELL
+        function addCell(row, text) {
+
+            row.appendChild(makeElement("td", text));
+        }
+
+
+        // DISPLAY MESSAGE INSIDE TABLE
+        function showTableMessage(tbody, message, columns) {
+
+            tbody.replaceChildren();
+
+            const row = document.createElement("tr");
+            const cell = makeElement("td", message);
+
+            cell.colSpan = columns;
+
+            row.appendChild(cell);
+            tbody.appendChild(row);
+        }
+
+
+        // UPDATE DASHBOARD RECENT EVENTS
+        function renderDashboard(logs) {
+
+            const tbody = document.querySelector(
+                "#dashboard .events-panel tbody"
+            );
+
+            if (!tbody) return;
+
+            tbody.replaceChildren();
+
+            if (logs.length === 0) {
+                showTableMessage(
+                    tbody,
+                    "No security events recorded yet.",
+                    5
+                );
+                return;
+            }
+
+            logs.slice(0, 5).forEach(log => {
+
+                const row = document.createElement("tr");
+
+                addCell(row, log.ip_address);
+                addCell(row, log.event_type);
+                addCell(row, log.description);
+
+                const severity = makeElement(
+                    "span",
+                    log.severity || "Unknown",
+                    "severity " + (log.severity || "low").toLowerCase()
+                );
+
+                const severityCell = document.createElement("td");
+                severityCell.appendChild(severity);
+                row.appendChild(severityCell);
+
+                const suspicious = isSuspicious(log);
+
+                const status = makeElement(
+                    "span",
+                    suspicious ? "Detected" : "Normal",
+                    "status " + (suspicious ? "detected" : "normal")
+                );
+
+                const statusCell = document.createElement("td");
+                statusCell.appendChild(status);
+                row.appendChild(statusCell);
+
+                tbody.appendChild(row);
+            });
+        }
+
+
+        // UPDATE SECURITY LOGS TABLE
+        function renderLogs(logs) {
+
+            const tbody = document.querySelector("#logs tbody");
+
+            if (!tbody) return;
+
+            tbody.replaceChildren();
+
+            if (logs.length === 0) {
+                showTableMessage(
+                    tbody,
+                    "No security logs found.",
+                    4
+                );
+                return;
+            }
+
+            logs.forEach(log => {
+
+                const row = document.createElement("tr");
+
+                addCell(row, log.ip_address);
+                addCell(row, log.event_type);
+                addCell(row, log.description);
+
+                const severity = makeElement(
+                    "span",
+                    log.severity || "Unknown",
+                    "severity " + (log.severity || "low").toLowerCase()
+                );
+
+                const cell = document.createElement("td");
+                cell.appendChild(severity);
+                row.appendChild(cell);
+
+                tbody.appendChild(row);
+            });
+        }
+
+
+        // UPDATE THREAT ALERTS
+        function renderAlerts(alerts) {
+
+            const container = document.querySelector("#alertsContainer");
+
+            if (!container) return;
+
+            container.replaceChildren();
+
+            if (alerts.length === 0) {
+
+                container.appendChild(
+                    makeElement(
+                        "div",
+                        "No security alerts recorded yet.",
+                        "panel"
+                    )
+                );
+
+                return;
+            }
+
+            alerts.forEach(alert => {
+
+                const card = makeElement("div", "", "alert-card");
+
+                const symbol = makeElement(
+                    "div",
+                    "!",
+                    "alert-symbol"
+                );
+
+                const details = document.createElement("div");
+
+                const severity = makeElement(
+                    "span",
+                    "SECURITY ALERT",
+                    "severity high"
+                );
+
+                const heading = makeElement(
+                    "h3",
+                    alert.threat_type || "Security Threat"
+                );
+
+                const ip = makeElement(
+                    "p",
+                    "IP: " + alert.ip_address
+                );
+
+                const description = makeElement(
+                    "small",
+                    alert.description
+                );
+
+                const status = makeElement(
+                    "p",
+                    "Status: " + (alert.status || "OPEN")
+                );
+
+                const timestamp = makeElement(
+                    "small",
+                    "Created: " + formatDate(alert.created_at)
+                );
+
+                details.append(
+                    severity,
+                    heading,
+                    ip,
+                    description,
+                    status,
+                    timestamp
+                );
+
+                card.append(symbol, details);
+
+                container.appendChild(card);
+            });
+        }
+
+
+        // DISPLAY INCIDENT HISTORY FROM MYSQL
+
+        function renderIncidents(alerts) {
+
+            const tbody = document.querySelector("#incidents tbody");
+
+            if (!tbody) return;
+
+            tbody.replaceChildren();
+
+            if (!alerts || alerts.length === 0) {
+                showTableMessage(
+                    tbody,
+                    "No security incidents recorded yet.",
+                    7
+                );
+                return;
+            }
+
+            alerts.forEach(alert => {
+
+                const row = document.createElement("tr");
+
+                addCell(row, alert.alert_id);
+                addCell(row, alert.ip_address);
+                addCell(row, alert.threat_type);
+                addCell(row, alert.description);
+
+                // Incident status
+                const statusCell = document.createElement("td");
+                const statusValue = alert.status || "OPEN";
+
+                const status = makeElement(
+                    "span",
+                    statusValue,
+                    "status " + statusValue.toLowerCase()
+                );
+
+                statusCell.appendChild(status);
+                row.appendChild(statusCell);
+
+                addCell(row, formatDate(alert.created_at));
+
+                // Resolve action
+                const actionCell = document.createElement("td");
+
+                if (statusValue.toUpperCase() === "OPEN") {
+
+                    const resolveButton = makeElement(
+                        "button",
+                        "Resolve",
+                        "resolve-btn"
+                    );
+
+                    resolveButton.type = "button";
+
+                    resolveButton.addEventListener("click", async () => {
+                        await resolveIncident(alert.alert_id);
+                    });
+
+                    actionCell.appendChild(resolveButton);
+
+                } else {
+
+                    actionCell.appendChild(
+                        makeElement("span", "Completed")
+                    );
+
+                }
+
+                row.appendChild(actionCell);
+
+                tbody.appendChild(row);
+            });
+        }
+
+
+        // RESOLVE SECURITY INCIDENT
+        async function resolveIncident(alertId) {
+
+            if (!confirm("Are you sure you want to resolve this incident?")) {
+                return;
+            }
+
+            try {
+
+                const response = await fetch(
+                    API_BASE + "/alerts/" + encodeURIComponent(alertId) + "/resolve",
+                    {
+                        method: "POST"
+                    }
+                );
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        result.error || "Unable to resolve incident"
+                    );
+                }
+
+                alert("Incident resolved successfully!");
+
+                // Reload database records and dashboard statistics
+                await loadDashboard();
+
+            } catch (error) {
+
+                console.error("Incident resolution error:", error);
+
+                alert("Failed to resolve incident: " + error.message);
+
+            }
+        }
+
+        // RENDER SECURITY ACTIVITY CHART USING MYSQL LOGS
+        function renderActivityChart(logs) {
+
+            const chart = document.getElementById("activityChart");
+            const yAxis = document.getElementById("activityYAxis");
+
+            if (!chart || !yAxis) return;
+
+            chart.replaceChildren();
+            yAxis.replaceChildren();
+
+            const days = [];
+
+            for (let i = 6; i >= 0; i--) {
+
+                const date = new Date();
+                date.setHours(0, 0, 0, 0);
+                date.setDate(date.getDate() - i);
+
+                const key = [
+                    date.getFullYear(),
+                    String(date.getMonth() + 1).padStart(2, "0"),
+                    String(date.getDate()).padStart(2, "0")
+                ].join("-");
+
+                days.push({
+                    key,
+                    label: date.toLocaleDateString("en-IN", {
+                        weekday: "short"
+                    }),
+                    total: 0,
+                    threats: 0
+                });
+            }
+
+            (logs || []).forEach(log => {
+
+                if (!log.created_at) return;
+
+                const date = new Date(
+                    String(log.created_at).replace(" ", "T")
+                );
+
+                if (Number.isNaN(date.getTime())) return;
+
+                const key = [
+                    date.getFullYear(),
+                    String(date.getMonth() + 1).padStart(2, "0"),
+                    String(date.getDate()).padStart(2, "0")
+                ].join("-");
+
+                const day = days.find(item => item.key === key);
+
+                if (!day) return;
+
+                day.total++;
+
+                if (isSuspicious(log)) {
+                    day.threats++;
+                }
+            });
+
+            const maximum = Math.max(
+                1,
+                ...days.map(day => day.total)
+            );
+
+            const scale = Math.max(
+                4,
+                Math.ceil(maximum / 4) * 4
+            );
+
+            [
+                scale,
+                scale * 0.75,
+                scale * 0.5,
+                scale * 0.25,
+                0
+            ].forEach(value => {
+                yAxis.appendChild(
+                    makeElement("span", String(Math.round(value)))
+                );
+            });
+
+            days.forEach(day => {
+
+                const group = makeElement("div", "", "bar-group");
+                const bars = makeElement("div", "", "bars");
+
+                const totalBar = makeElement("span", "", "bar total");
+                const threatBar = makeElement("span", "", "bar threat");
+
+                totalBar.style.height =
+                    (day.total / scale * 100) + "%";
+
+                threatBar.style.height =
+                    (day.threats / scale * 100) + "%";
+
+                totalBar.title = "Total events: " + day.total;
+                threatBar.title = "Suspicious events: " + day.threats;
+
+                bars.append(totalBar, threatBar);
+
+                group.append(
+                    bars,
+                    makeElement("small", day.label)
+                );
+
+                chart.appendChild(group);
+            });
+
+            if (!logs || logs.length === 0) {
+                chart.appendChild(
+                    makeElement("p", "No security events recorded yet.")
+                );
+            }
+        }
+
+
+        // RENDER THREAT OVERVIEW USING MYSQL LOGS
+        function renderThreatOverview(logs) {
+
+            const container = document.getElementById("threatOverview");
+
+            if (!container) return;
+
+            container.replaceChildren();
+
+            const suspiciousLogs = (logs || []).filter(isSuspicious);
+
+            const categories = [
+
+                {
+                    name: "Brute Force Attempts",
+                    color: "red-fill",
+
+                    matches: log =>
+                        (log.event_type || "")
+                            .toLowerCase()
+                            .includes("failed login")
+                },
+
+                {
+                    name: "Unusual Requests",
+                    color: "blue-fill",
+
+                    matches: log =>
+                        (log.event_type || "")
+                            .toLowerCase()
+                            .includes("unusual request")
+                },
+
+                {
+                    name: "Other Suspicious Activity",
+                    color: "orange-fill",
+
+                    matches: log =>
+                        !(log.event_type || "")
+                            .toLowerCase()
+                            .includes("failed login") &&
+                        !(log.event_type || "")
+                            .toLowerCase()
+                            .includes("unusual request")
+                }
+
+            ];
+
+            const results = categories.map(category => ({
+                ...category,
+                count: suspiciousLogs.filter(category.matches).length
+            }));
+
+            const maximum = Math.max(
+                1,
+                ...results.map(item => item.count)
+            );
+
+            results.forEach(item => {
+
+                const section = makeElement("div", "", "threat-item");
+                const label = makeElement("div", "", "threat-label");
+
+                label.append(
+                    makeElement("span", item.name),
+                    makeElement("strong", String(item.count))
+                );
+
+                const progress = makeElement("div", "", "progress");
+
+                const bar = makeElement(
+                    "div",
+                    "",
+                    "progress-bar " + item.color
+                );
+
+                bar.style.width =
+                    (item.count / maximum * 100) + "%";
+
+                progress.appendChild(bar);
+
+                section.append(label, progress);
+                container.appendChild(section);
+            });
+
+            container.appendChild(
+                makeElement(
+                    "small",
+                    "Based on " + suspiciousLogs.length +
+                    " suspicious records retrieved from MySQL."
+                )
+            );
+
+            if (suspiciousLogs.length === 0) {
+                container.appendChild(
+                    makeElement("p", "No suspicious activities recorded yet.")
+                );
+            }
+        }
+
+
+
+        // UPDATE DASHBOARD STATISTICS
+        function renderSummary(summary) {
+
+            document.getElementById("totalEvents").textContent =
+                summary.total_events ?? 0;
+
+            document.getElementById("threatsDetected").textContent =
+                summary.threats_detected ?? 0;
+
+            document.getElementById("flaggedIPs").textContent =
+                summary.flagged_ips ?? 0;
+
+            document.getElementById("resolvedIncidents").textContent =
+                summary.resolved_incidents ?? 0;
+        }
+
+
+        // LOAD ALL DATA FROM MYSQL THROUGH JAVA
+        async function loadDashboard() {
+
+            try {
+
+                const [logs, alerts, summary] = await Promise.all([
+
+                    fetchAPI("/logs"),
+                    fetchAPI("/alerts"),
+                    fetchAPI("/summary")
+
+                ]);
+
+                // Update dashboard numbers
+                renderSummary(summary);
+
+                // Update charts using actual database logs
+                renderActivityChart(logs);
+                renderThreatOverview(logs);
+
+                // Update dashboard event table
+                renderDashboard(logs);
+
+                // Update security logs page
+                renderLogs(logs);
+
+                // Update threat alerts page
+                renderAlerts(alerts);
+
+                // Update incident history page
+                renderIncidents(alerts);
+
+                console.log("CyberGuard data loaded successfully.");
+
+                console.log("Dashboard statistics:", summary);
+
+                console.log("Security logs:", logs);
+
+                console.log("Security alerts:", alerts);
+
+            } catch (error) {
+
+                console.error("CyberGuard API error:", error);
+
+                document.getElementById("totalEvents").textContent = "!";
+                document.getElementById("threatsDetected").textContent = "!";
+                document.getElementById("flaggedIPs").textContent = "!";
+                document.getElementById("resolvedIncidents").textContent = "!";
+
+                console.log(
+                    "Check whether the Java backend is running on port 8080."
+                );
+            }
+        }
+
+
+        // DISPLAY CURRENT DATE
+        function displayCurrentDate() {
+
+            const dateElement = document.getElementById("currentDate");
+
+            if (dateElement) {
+                dateElement.textContent =
+                    new Date().toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric"
+                    });
+            }
+        }
+
+
+        // CSV FILE IMPORT
+
+        // Parse CSV while supporting commas and quotes inside fields
+        function parseCSV(text) {
+
+            const rows = [];
+            let row = [];
+            let field = "";
+            let insideQuotes = false;
+
+            for (let i = 0; i < text.length; i++) {
+
+                const char = text[i];
+                const next = text[i + 1];
+
+                if (char === '"') {
+
+                    if (insideQuotes && next === '"') {
+                        field += '"';
+                        i++;
+                    } else {
+                        insideQuotes = !insideQuotes;
+                    }
+
+                } else if (char === "," && !insideQuotes) {
+
+                    row.push(field.trim());
+                    field = "";
+
+                } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+
+                    if (char === "\r" && next === "\n") {
+                        i++;
+                    }
+
+                    row.push(field.trim());
+
+                    if (row.some(value => value !== "")) {
+                        rows.push(row);
+                    }
+
+                    row = [];
+                    field = "";
+
+                } else {
+
+                    field += char;
+                }
+            }
+
+            if (insideQuotes) {
+                throw new Error("CSV contains an unclosed quotation mark.");
             }
 
             row.push(field.trim());
@@ -1059,169 +1263,247 @@ function parseCSV(text) {
                 rows.push(row);
             }
 
-            row = [];
-            field = "";
-
-        } else {
-
-            field += char;
-        }
-    }
-
-    if (insideQuotes) {
-        throw new Error("CSV contains an unclosed quotation mark.");
-    }
-
-    row.push(field.trim());
-
-    if (row.some(value => value !== "")) {
-        rows.push(row);
-    }
-
-    return rows;
-}
-
-
-// VALIDATE IPV4 ADDRESS
-function isValidIPv4(ip) {
-
-    const parts = ip.split(".");
-
-    return parts.length === 4 &&
-        parts.every(part =>
-            /^\d{1,3}$/.test(part) &&
-            Number(part) >= 0 &&
-            Number(part) <= 255
-        );
-}
-
-
-// UPLOAD AND PROCESS CSV
-document.getElementById("uploadCsvBtn").addEventListener("click", async function () {
-
-    const fileInput = document.getElementById("csvFile");
-    const message = document.getElementById("csvMessage");
-    const button = document.getElementById("uploadCsvBtn");
-
-    const file = fileInput.files[0];
-
-    message.textContent = "";
-    message.className = "";
-
-    if (!file) {
-        message.textContent = "Please select a CSV file first.";
-        message.className = "error";
-        return;
-    }
-
-    if (!file.name.toLowerCase().endsWith(".csv")) {
-        message.textContent = "Please select a valid CSV file.";
-        message.className = "error";
-        return;
-    }
-
-    if (file.size > 1024 * 1024) {
-        message.textContent = "File size must not exceed 1 MB.";
-        message.className = "error";
-        return;
-    }
-
-    button.disabled = true;
-    button.textContent = "Processing CSV...";
-
-    try {
-
-        const text = await file.text();
-        const rows = parseCSV(text);
-
-        if (rows.length < 2) {
-            throw new Error("CSV must contain a header and at least one record.");
+            return rows;
         }
 
-        const headers = rows[0].map(header =>
-            header.replace(/^\uFEFF/, "").trim().toLowerCase()
-        );
 
-        const requiredHeaders = [
-            "ip_address",
-            "event_type",
-            "description",
-            "severity"
-        ];
+        // VALIDATE IPV4 ADDRESS
+        function isValidIPv4(ip) {
 
-        const missingHeaders = requiredHeaders.filter(
-            header => !headers.includes(header)
-        );
+            const parts = ip.split(".");
 
-        if (missingHeaders.length > 0) {
-            throw new Error(
-                "Missing CSV columns: " + missingHeaders.join(", ")
-            );
+            return parts.length === 4 &&
+                parts.every(part =>
+                    /^\d{1,3}$/.test(part) &&
+                    Number(part) >= 0 &&
+                    Number(part) <= 255
+                );
         }
 
-        const records = rows.slice(1);
 
-        if (records.length > 500) {
-            throw new Error("Maximum 500 records are allowed per upload.");
-        }
+        // UPLOAD AND PROCESS CSV
+        document.getElementById("uploadCsvBtn").addEventListener("click", async function () {
 
-        let successful = 0;
-        let failed = 0;
+            const fileInput = document.getElementById("csvFile");
+            const message = document.getElementById("csvMessage");
+            const button = document.getElementById("uploadCsvBtn");
 
-        const errors = [];
+            const file = fileInput.files[0];
 
-        for (let i = 0; i < records.length; i++) {
+            message.textContent = "";
+            message.className = "";
 
-            const values = records[i];
-
-            if (values.length !== headers.length) {
-                failed++;
-                errors.push("Row " + (i + 2) + ": Incorrect number of columns.");
-                continue;
+            if (!file) {
+                message.textContent = "Please select a CSV file first.";
+                message.className = "error";
+                return;
             }
 
-            const record = {};
-
-            headers.forEach((header, index) => {
-                record[header] = values[index];
-            });
-
-            const ipAddress = record.ip_address;
-            const eventType = record.event_type;
-            const description = record.description;
-            const severity = record.severity;
-
-            if (
-                !ipAddress ||
-                !eventType ||
-                !description ||
-                !severity
-            ) {
-                failed++;
-                errors.push("Row " + (i + 2) + ": Missing required values.");
-                continue;
+            if (!file.name.toLowerCase().endsWith(".csv")) {
+                message.textContent = "Please select a valid CSV file.";
+                message.className = "error";
+                return;
             }
 
-            if (!isValidIPv4(ipAddress)) {
-                failed++;
-                errors.push("Row " + (i + 2) + ": Invalid IPv4 address.");
-                continue;
+            if (file.size > 1024 * 1024) {
+                message.textContent = "File size must not exceed 1 MB.";
+                message.className = "error";
+                return;
             }
 
-            if (!["low", "medium", "high"].includes(severity.toLowerCase())) {
-                failed++;
-                errors.push("Row " + (i + 2) + ": Invalid severity.");
-                continue;
-            }
+            button.disabled = true;
+            button.textContent = "Processing CSV...";
 
             try {
 
-                const data = new URLSearchParams();
+                const text = await file.text();
+                const rows = parseCSV(text);
 
-                data.append("ipAddress", ipAddress);
-                data.append("eventType", eventType);
-                data.append("description", description);
-                data.append("severity", severity);
+                if (rows.length < 2) {
+                    throw new Error("CSV must contain a header and at least one record.");
+                }
+
+                const headers = rows[0].map(header =>
+                    header.replace(/^\uFEFF/, "").trim().toLowerCase()
+                );
+
+                const requiredHeaders = [
+                    "ip_address",
+                    "event_type",
+                    "description",
+                    "severity"
+                ];
+
+                const missingHeaders = requiredHeaders.filter(
+                    header => !headers.includes(header)
+                );
+
+                if (missingHeaders.length > 0) {
+                    throw new Error(
+                        "Missing CSV columns: " + missingHeaders.join(", ")
+                    );
+                }
+
+                const records = rows.slice(1);
+
+                if (records.length > 500) {
+                    throw new Error("Maximum 500 records are allowed per upload.");
+                }
+
+                let successful = 0;
+                let failed = 0;
+
+                const errors = [];
+
+                for (let i = 0; i < records.length; i++) {
+
+                    const values = records[i];
+
+                    if (values.length !== headers.length) {
+                        failed++;
+                        errors.push("Row " + (i + 2) + ": Incorrect number of columns.");
+                        continue;
+                    }
+
+                    const record = {};
+
+                    headers.forEach((header, index) => {
+                        record[header] = values[index];
+                    });
+
+                    const ipAddress = record.ip_address;
+                    const eventType = record.event_type;
+                    const description = record.description;
+                    const severity = record.severity;
+
+                    if (
+                        !ipAddress ||
+                        !eventType ||
+                        !description ||
+                        !severity
+                    ) {
+                        failed++;
+                        errors.push("Row " + (i + 2) + ": Missing required values.");
+                        continue;
+                    }
+
+                    if (!isValidIPv4(ipAddress)) {
+                        failed++;
+                        errors.push("Row " + (i + 2) + ": Invalid IPv4 address.");
+                        continue;
+                    }
+
+                    if (!["low", "medium", "high"].includes(severity.toLowerCase())) {
+                        failed++;
+                        errors.push("Row " + (i + 2) + ": Invalid severity.");
+                        continue;
+                    }
+
+                    try {
+
+                        const data = new URLSearchParams();
+
+                        data.append("ipAddress", ipAddress);
+                        data.append("eventType", eventType);
+                        data.append("description", description);
+                        data.append("severity", severity);
+
+                        const response = await fetch(API_BASE + "/logs", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/x-www-form-urlencoded"
+                            },
+                            body: data.toString()
+                        });
+
+                        const result = await response.json();
+
+                        if (!response.ok || result.status !== "success") {
+                            throw new Error(result.error || "Server rejected this record.");
+                        }
+
+                        successful++;
+
+                    } catch (error) {
+
+                        failed++;
+
+                        errors.push(
+                            "Row " + (i + 2) + ": " + error.message
+                        );
+                    }
+                }
+
+                // REFRESH DASHBOARD, LOGS AND ALERTS
+                await loadDashboard();
+
+                message.className = successful > 0 ? "success" : "error";
+
+                message.textContent =
+                    "CSV processing completed!\n" +
+                    "Successfully submitted: " + successful + "\n" +
+                    "Failed records: " + failed;
+
+                if (errors.length > 0) {
+                    message.textContent +=
+                        "\n\nErrors:\n" + errors.slice(0, 10).join("\n");
+                }
+
+                if (successful > 0) {
+                    fileInput.value = "";
+                }
+
+            } catch (error) {
+
+                message.textContent = error.message;
+                message.className = "error";
+
+            } finally {
+
+                button.disabled = false;
+                button.textContent = "Upload and Analyze";
+            }
+
+        });
+
+
+        // LOAD DATA WHEN PAGE OPENS
+        document.addEventListener("DOMContentLoaded", () => {
+
+            displayCurrentDate();
+
+            loadDashboard();
+
+        });
+
+
+        // MANUAL NETWORK ACTIVITY SUBMISSION
+        document.getElementById("logForm").addEventListener("submit", async function (event) {
+
+            event.preventDefault();
+
+            const button = document.getElementById("submitLogBtn");
+            const message = document.getElementById("formMessage");
+
+            const ipAddress = document.getElementById("ipAddress").value.trim();
+            const eventType = document.getElementById("eventType").value;
+            const severity = document.getElementById("severity").value;
+            const description = document.getElementById("description").value.trim();
+
+            const data = new URLSearchParams();
+
+            data.append("ipAddress", ipAddress);
+            data.append("eventType", eventType);
+            data.append("severity", severity);
+            data.append("description", description);
+
+            button.disabled = true;
+            button.textContent = "Analyzing Activity...";
+
+            message.textContent = "";
+            message.className = "";
+
+            try {
 
                 const response = await fetch(API_BASE + "/logs", {
                     method: "POST",
@@ -1233,143 +1515,47 @@ document.getElementById("uploadCsvBtn").addEventListener("click", async function
 
                 const result = await response.json();
 
-                if (!response.ok || result.status !== "success") {
-                    throw new Error(result.error || "Server rejected this record.");
+                if (!response.ok) {
+                    throw new Error(result.error || "Unable to submit network activity.");
                 }
 
-                successful++;
+                message.textContent =
+                    "Activity submitted successfully! Detection result: " +
+                    result.detection;
+
+                message.className = "success";
+
+                document.getElementById("logForm").reset();
+
+                // REFRESH LOGS, ALERTS AND DASHBOARD STATISTICS
+                await loadDashboard();
 
             } catch (error) {
 
-                failed++;
+                console.error("Log submission error:", error);
 
-                errors.push(
-                    "Row " + (i + 2) + ": " + error.message
-                );
+                message.textContent = error.message;
+                message.className = "error";
+
+            } finally {
+
+                button.disabled = false;
+                button.textContent = "Submit Activity";
+
             }
-        }
 
-        // REFRESH DASHBOARD, LOGS AND ALERTS
-        await loadDashboard();
-
-        message.className = successful > 0 ? "success" : "error";
-
-        message.textContent =
-            "CSV processing completed!\n" +
-            "Successfully submitted: " + successful + "\n" +
-            "Failed records: " + failed;
-
-        if (errors.length > 0) {
-            message.textContent +=
-                "\n\nErrors:\n" + errors.slice(0, 10).join("\n");
-        }
-
-        if (successful > 0) {
-            fileInput.value = "";
-        }
-
-    } catch (error) {
-
-        message.textContent = error.message;
-        message.className = "error";
-
-    } finally {
-
-        button.disabled = false;
-        button.textContent = "Upload and Analyze";
-    }
-
-});
-
-
-// LOAD DATA WHEN PAGE OPENS
-document.addEventListener("DOMContentLoaded", () => {
-
-    displayCurrentDate();
-
-    loadDashboard();
-
-});
-
-
-// MANUAL NETWORK ACTIVITY SUBMISSION
-document.getElementById("logForm").addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    const button = document.getElementById("submitLogBtn");
-    const message = document.getElementById("formMessage");
-
-    const ipAddress = document.getElementById("ipAddress").value.trim();
-    const eventType = document.getElementById("eventType").value;
-    const severity = document.getElementById("severity").value;
-    const description = document.getElementById("description").value.trim();
-
-    const data = new URLSearchParams();
-
-    data.append("ipAddress", ipAddress);
-    data.append("eventType", eventType);
-    data.append("severity", severity);
-    data.append("description", description);
-
-    button.disabled = true;
-    button.textContent = "Analyzing Activity...";
-
-    message.textContent = "";
-    message.className = "";
-
-    try {
-
-        const response = await fetch(API_BASE + "/logs", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: data.toString()
         });
 
-        const result = await response.json();
 
-        if (!response.ok) {
-            throw new Error(result.error || "Unable to submit network activity.");
-        }
-
-        message.textContent =
-            "Activity submitted successfully! Detection result: " +
-            result.detection;
-
-        message.className = "success";
-
-        document.getElementById("logForm").reset();
-
-        // REFRESH LOGS, ALERTS AND DASHBOARD STATISTICS
-        await loadDashboard();
-
-    } catch (error) {
-
-        console.error("Log submission error:", error);
-
-        message.textContent = error.message;
-        message.className = "error";
-
-    } finally {
-
-        button.disabled = false;
-        button.textContent = "Submit Activity";
-
-    }
-
-});
+        // REFRESH DATA WHEN NAVIGATING BETWEEN PAGES
+        window.addEventListener("hashchange", loadDashboard);
 
 
-// REFRESH DATA WHEN NAVIGATING BETWEEN PAGES
-window.addEventListener("hashchange", loadDashboard);
+        // REFRESH DATA EVERY 30 SECONDS
+        setInterval(loadDashboard, 30000);
 
-
-// REFRESH DATA EVERY 30 SECONDS
-setInterval(loadDashboard, 30000);
-
-</script>
+    </script>
 
 </body>
+
 </html>

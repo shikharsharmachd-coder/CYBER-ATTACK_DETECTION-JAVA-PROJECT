@@ -1075,3 +1075,24 @@ a:focus-visible {
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+.resolve-btn {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.resolve-btn:hover {
+    background: #15803d;
+}
+
+.resolve-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
